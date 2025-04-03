@@ -1,2 +1,2 @@
-# Semana-04---responsive
+# Semana-04-responsive
 Primer ejercicio de responsive
