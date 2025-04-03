@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root{
+    --rojo: rgb(221, 11, 11);
+}
+
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(240, 239, 239);
+}
+
+h1,h2{
+    font-family: "Poppins", sans-serif;
+}
+
+header{
+    text-align: center;
+    background-color: var(--rojo);
+    padding: 1em;
+
+}
+
+header img{
+    width: 120px;
+}
+
+nav a{
+    font-weight: semibold;
+    font-size: 1.1em;
+    color: #FFFFFF;
+    padding: 0.7em;
+}
+
+a{
+    transition: 0.3s;
+}
+
+nav a:hover{
+    background-color: rgb(151, 5, 5);
+}
+
+.contenedor{
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1200px;
+}
+
+h1{
+    text-align: center;
+    color: var(--rojo);
+    margin: 1em 0;
+}
+
+#productos article{
+    padding: 1.4em;
+    border-radius: 4px;
+    background-color: #ffffff;
+    margin-bottom: 1em;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.11) inset /*para adentro la sombra*/; /*primer valor para derecha o izquierda, segundo valor arriba o abajo o 0 si cae directo en la combra. Tercer valor es el blur, cuanto se difumina la sombra, cuarto spread: puede ser mismo tamaño, mas grande o mas chica. Si pongo 0 es igual a la caja. El ultimo valor es el color*/
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: flex-start; /*para que los botones no se estiren segun su padre*/
+}
+
+#productos article a{
+    display: inline-block;
+    color: var(--rojo);
+    border: black 2px solid;
+    padding: 0.5em;
+    border-radius: 10px;
+    
+}
+
+#productos article a:hover{
+    background-color: rgb(0, 0, 0);
+    color: var(--rojo);
+}
+
+#productos p{
+    line-height: 1.3em; /*distancia entre los renglones, interlineado*/
+}
+
+/*consulto si estoy en tamaño de tablet*/
+@media all and (min-width:768px){
+    header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1em;
+    }
+    h1{
+        font-size: 3em;
+    }
+
+    #productos{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.2em;
+    }
+
+    #productos article{
+        flex-grow: 1; /*ocupe todos los pixeles*/
+        flex-shrink: 0; /*que se achiquen a menos de x si la pantalla es mas chica*/
+        flex-basis: 300px; /*el minimo que miden. el ancho minimo con el que van a arrancar. se dice con px. quiero que por lo menos mis cajas midan x. Si sobra espacio ocupenlo*/
+    }
+}
+
+@media all and (min-width: 1200px){
+    #productos article{
+        flex-basis: 250px; /*minimo de tamaño permitido*/
+    }
+}
